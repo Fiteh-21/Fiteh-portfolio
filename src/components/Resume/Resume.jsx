@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Resume.module.css";
 
 export default function Resume() {
@@ -43,7 +42,7 @@ export default function Resume() {
           </div>
 
           <a
-            href="../../../public/Fiteh Tesfaye - Resume-2.pdf"
+            href="/Fiteh Tesfaye - Resume-2.pdf"
             download
             className={styles.downloadBtn}
           >
