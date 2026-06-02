@@ -1,0 +1,204 @@
+.projectsSection {
+  width: 100%;
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Interactive Title Header */
+.titleContainer {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-self: flex-start;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--color-text-title);
+  letter-spacing: -0.03em;
+  margin: 0;
+  transition: var(--transition-theme);
+}
+
+.titleLine {
+  width: 2.5rem;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #7c3aed);
+  border-radius: 99px;
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.titleContainer:hover .titleLine {
+  width: 100%;
+}
+
+/* 3-Column Uniform Grid Layout */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding: 20px 0;
+}
+
+/* Professional Dark Card Frame */
+.projectCard {
+  background: var(--color-project-card-bg);
+  border: 1px solid var(--color-project-card-border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-accent);
+  box-shadow:
+    0 12px 30px var(--color-shadow-card-hover),
+    0 4px 12px var(--color-accent-glow);
+}
+
+/* Image Container Frame (Widescreen 16:9 ratio) */
+.imageBox {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-project-card-border);
+  transition: var(--transition-theme);
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.projectCard:hover .cardImage {
+  transform: scale(1.04);
+}
+
+/* Card Body Content Panel */
+.contentBox {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Content Header (Title + Action Row) */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.projectTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-title);
+  margin: 0;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  transition: var(--transition-theme);
+}
+
+.actionIcons {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Layout Control Buttons */
+.iconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  border-radius: 8px;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    var(--transition-theme);
+}
+
+.iconBtn:hover {
+  color: var(--color-accent);
+  background-color: var(--color-accent-glow);
+}
+
+.projectDescription {
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0 0 28px 0;
+  flex-grow: 1;
+  transition: var(--transition-theme);
+}
+
+/* Technology Badges Layout Section */
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.tagBadge {
+  font-size: 0.75rem;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background-color: var(--color-project-tag-bg);
+  border: 1px solid transparent;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    var(--transition-theme);
+}
+
+.projectCard:hover .tagBadge {
+  color: var(--color-text-main);
+  background-color: var(--color-project-tag-bg-hover);
+}
+
+/* mobile responsiveness */
+@media (max-width: 992px) {
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* @media (max-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+} */
+
+@media (max-width: 576px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+}

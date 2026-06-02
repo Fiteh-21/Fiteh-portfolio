@@ -1,0 +1,166 @@
+/* ==========================================================================
+   DESIGN TOKENS & DESIGN SYSTEM (Global CSS Variables)
+   ========================================================================== */
+:root {
+  /* Typography System Scale */
+  --font-sans:
+    "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Animation Timing Mechanics */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-theme: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                      color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                      border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                      box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                      background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Core Brand Colors (Default Dark Theme Matrix) */
+  --color-bg-main: #0b0f19; /* Deep rich dark background */
+  --color-bg-surface: #171e2e; /* Slightly lighter surface for cards/nav */
+  --color-bg-input: #1f293d; /* Input fields background */
+  
+  --color-bg-card: rgba(17, 24, 39, 0.4);
+  --color-bg-card-hover: rgba(30, 41, 59, 0.5);
+
+  /* Text System Colors */
+  --color-text-main: #f1f5f9; /* Slate 100 - Crisp high-contrast reading */
+  --color-text-muted: #94a3b8; /* Slate 400 - Secondary info and metadata */
+  --color-text-title: #ffffff; /* Crisp white headings */
+
+  /* Interactive Accent System */
+  --color-accent: #38bdf8; /* Vivid sky blue for main focus actions */
+  --color-accent-hover: #0ea5e9; /* Darker interactive state hue shifts */
+  --color-accent-glow: rgba(56, 189, 248, 0.15);
+
+  /* Structural Border Lines */
+  --color-border: rgba(255, 255, 255, 0.06);
+
+  /* Navbar specifics */
+  --color-navbar-bg: rgba(17, 24, 39, 0.85);
+
+  /* Resume specific */
+  --color-resume-bg: #141825;
+  --color-resume-card-bg: rgba(31, 41, 55, 0.4);
+  --color-resume-card-bg-hover: rgba(31, 41, 55, 0.65);
+  --color-resume-card-border: rgba(243, 244, 246, 0.08);
+
+  /* Projects specific */
+  --color-project-card-bg: #111827;
+  --color-project-card-border: #1f2937;
+  --color-project-tag-bg: #1f2937;
+  --color-project-tag-bg-hover: #374151;
+
+  /* Hero section specific */
+  --color-hero-grad: linear-gradient(135deg, #0b0f19 0%, #111827 50%, #0b0f19 100%);
+  --color-hero-glow-opacity: 0.15;
+
+  /* Contact section specific */
+  --color-contact-card-bg: #111827;
+  --color-contact-card-border: #1f2937;
+  --color-contact-divider: #1f2937;
+  --color-copyright: #6b7280;
+}
+
+[data-theme="light"] {
+  /* Core Brand Colors (Light Theme Matrix) */
+  --color-bg-main: #f8fafc; /* Slate 50 - Very clean light background */
+  --color-bg-surface: #ffffff; /* Pure white card/nav background */
+  --color-bg-input: #f1f5f9; /* Slate 100 - Form input background */
+  
+  --color-bg-card: rgba(255, 255, 255, 0.8);
+  --color-bg-card-hover: rgba(241, 245, 249, 0.9);
+
+  /* Text System Colors */
+  --color-text-main: #0f172a; /* Slate 900 - Crisp high-contrast reading */
+  --color-text-muted: #475569; /* Slate 600 - Secondary info */
+  --color-text-title: #0f172a; /* Slate 900 headings */
+
+  /* Interactive Accent System */
+  --color-accent: #2563eb; /* Strong blue for light mode readability */
+  --color-accent-hover: #1d4ed8; 
+  --color-accent-glow: rgba(37, 99, 235, 0.1);
+
+  /* Structural Border Lines */
+  --color-border: rgba(15, 23, 42, 0.08);
+
+  /* Navbar specifics */
+  --color-navbar-bg: rgba(248, 250, 252, 0.85);
+
+  /* Resume specific */
+  --color-resume-bg: #f1f5f9;
+  --color-resume-card-bg: rgba(255, 255, 255, 0.7);
+  --color-resume-card-bg-hover: rgba(255, 255, 255, 0.95);
+  --color-resume-card-border: rgba(15, 23, 42, 0.08);
+
+  /* Projects specific */
+  --color-project-card-bg: #ffffff;
+  --color-project-card-border: rgba(15, 23, 42, 0.08);
+  --color-project-tag-bg: #e2e8f0;
+  --color-project-tag-bg-hover: #cbd5e1;
+
+  /* Hero section specific */
+  --color-hero-grad: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #f8fafc 100%);
+  --color-hero-glow-opacity: 0.06;
+
+  /* Contact section specific */
+  --color-contact-card-bg: #ffffff;
+  --color-contact-card-border: rgba(15, 23, 42, 0.08);
+  --color-contact-divider: rgba(15, 23, 42, 0.08);
+  --color-copyright: #475569;
+}
+
+/* ==========================================================================
+   GLOBAL RESET RULES (Normalizes cross-browser quirks)
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Force smooth scrolling anchors across the entire application viewport */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: var(--transition-theme);
+}
+
+/* Global Interactive Link Rules */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+/* Clear standard bullet point layouts across navigation arrays */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Responsive Fluid Images Layout Default */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Form Reset Rules */
+button,
+input,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+

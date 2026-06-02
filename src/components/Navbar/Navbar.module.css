@@ -1,0 +1,204 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--color-navbar-bg); /* Frosty blend */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  border-bottom: 1px solid var(--color-border);
+  transition:
+    var(--transition-theme),
+    padding 0.3s ease;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-text-title);
+  transition: var(--transition-theme);
+  z-index: 1001; /* Stay visible above mobile menu */
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navLink {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-muted); /* Default muted text layout */
+  transition: var(--transition-theme);
+}
+
+/* Hover style change */
+.navLink:hover {
+  color: var(--color-text-title);
+}
+
+/* Dynamic active color highlight targeting your blue identity link color */
+.navLink.active {
+  color: var(--color-accent); /* Premium branding illumination */
+  font-weight: 600;
+}
+
+/* Theme Toggle Button */
+.themeToggle {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: var(--transition-theme);
+  outline: none;
+}
+
+.themeToggle:hover {
+  color: var(--color-accent);
+  background-color: var(--color-accent-glow);
+  transform: scale(1.1);
+}
+
+.themeToggleIcon {
+  width: 1.2rem;
+  height: 1.2rem;
+  stroke-width: 2.5px;
+}
+
+/* Hamburger button styling */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text-title);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-theme);
+  z-index: 1001; /* Place above the overlay */
+  outline: none;
+}
+
+.hamburgerIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke-width: 2.5px;
+}
+
+.hamburger:hover {
+  color: var(--color-accent);
+  background-color: var(--color-accent-glow);
+}
+
+/* Mobile Drawer Overlay */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100vh;
+  background-color: var(--color-navbar-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Slide down entry animation config */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-30px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.3s ease;
+}
+
+.mobileMenuOpen {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 0;
+  margin: 0;
+}
+
+.mobileNavLink {
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  transition: var(--transition-theme);
+}
+
+.mobileNavLink:hover,
+.mobileNavLink.activeMobile {
+  color: var(--color-accent);
+}
+
+.mobileThemeToggleItem {
+  margin-top: 16px;
+  list-style: none;
+}
+
+.mobileThemeToggle {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-main);
+  padding: 10px 24px;
+  border-radius: 99px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: var(--transition-theme);
+  outline: none;
+}
+
+.mobileThemeToggle:hover {
+  color: var(--color-accent);
+  background-color: var(--color-bg-card-hover);
+  border-color: var(--color-accent);
+  transform: scale(1.05);
+}
+
+/* Media Query breakpoints */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 24px;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

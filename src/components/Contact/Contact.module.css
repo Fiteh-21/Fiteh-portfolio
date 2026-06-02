@@ -1,0 +1,162 @@
+.contactSection {
+  width: 100%;
+  padding: 80px 0 40px 0;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sectionHeader {
+  text-align: left;
+  margin-bottom: 48px;
+}
+
+.title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--color-text-title);
+  letter-spacing: -0.03em;
+  margin: 0 0 12px 0;
+  transition: var(--transition-theme);
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  opacity: 0.9;
+  transition: var(--transition-theme);
+}
+
+/* 3-Column structural grid layout */
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+
+
+/* Consistent, premium dark card framework matching your skills and projects blocks */
+.contactCard {
+  background: var(--color-contact-card-bg);
+  border: 1px solid var(--color-contact-card-border);
+  border-radius: 16px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+/* Links (Phone and Email) get a subtle hover lift */
+a.contactCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: 0 12px 24px var(--color-shadow-card-hover);
+}
+
+/* Circular vector frame */
+.iconBox {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-accent-glow);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+  transition: var(--transition-theme);
+}
+
+.cardLabel {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text-title);
+  margin: 0 0 8px 0;
+  transition: var(--transition-theme);
+}
+
+.cardValue {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
+  transition: var(--transition-theme);
+}
+.cardValue:hover {
+  color: var(--color-accent);
+}
+
+/* Sleek dark theme divider line */
+.divider {
+  border: 0;
+  height: 1px;
+  background: var(--color-contact-divider);
+  margin: 0 0 40px 0;
+  transition: var(--transition-theme);
+}
+
+/* Footer Container Alignment */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Flex row for social anchors */
+.socialLinks {
+  display: flex;
+  gap: 16px;
+}
+
+/* Modern circular outline social media buttons */
+.socialBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-contact-card-bg);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    var(--transition-theme);
+}
+
+.socialBtn:hover {
+  color: var(--color-accent);
+  background-color: var(--color-border);
+  border-color: var(--color-accent);
+}
+
+.copyright {
+  font-size: 0.875rem;
+  color: var(--color-copyright);
+  margin: 0;
+  transition: var(--transition-theme);
+}
+
+
+@media (max-width: 426px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}

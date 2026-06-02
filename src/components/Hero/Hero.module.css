@@ -1,0 +1,254 @@
+.heroSection {
+  position: relative;
+  height: 100vh; /* Locked strictly to screen height—no vertical scaling */
+  width: 100%;
+  max-width: 100vw; /* Locked strictly to screen width—no horizontal scaling */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Hard cut-off to prevent background elements from causing scrollbars */
+  background: var(--color-hero-grad);
+  padding: 0 1.5rem; /* Removed huge top/bottom paddings that push elements off-screen */
+  transition: var(--transition-theme);
+}
+
+/* --- Ambient Deep Glow Elements --- */
+.bgContainer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; /* Allows mouse clicks and touches to pass directly to content buttons */
+  z-index: 1; /* Drops the layer all the way behind content wrapper */
+}
+
+.blurBall {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: var(--color-hero-glow-opacity);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.blur1 {
+  top: 10%;
+  left: -5%;
+  width: 25rem;
+  height: 25rem;
+  background-color: #3b82f6; /* Vibrant Blue glow */
+  animation: floatDark 8s infinite ease-in-out;
+}
+
+.blur2 {
+  bottom: 10%;
+  right: -5%;
+  width: 28rem;
+  height: 28rem;
+  background-color: #7c3aed; /* Deep Purple glow */
+  animation: floatDark 10s infinite ease-in-out 1s;
+}
+
+@keyframes floatDark {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.12;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+    opacity: 0.18;
+  }
+}
+
+/* --- Content Wrapper Front & Center --- */
+.contentWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 10; /* Forces all content smoothly over background blur circles */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0 0;
+
+  /* Pulls the entire text block upward to eliminate the large top gap under the navbar */
+  /* transform: translateY(-2rem);  */
+}
+
+/* --- Typography & Elements Layout --- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(59, 130, 246, 0.1); /* Translucent dark blue pill */
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  margin-top: 5.5rem;
+  /* margin-bottom: 0.5rem;  */
+  /* Tightened margin to keep framework compact */
+}
+
+.badgeText {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #60a5fa; /* Vibrant light blue text */
+}
+
+.name {
+  font-size: 6rem; /* Balanced size for single screen compatibility */
+  font-weight: 700;
+  color: var(--color-text-title); /* Crisp white name to jump out from the dark */
+  margin-bottom: 0;
+  letter-spacing: -0.01em;
+  transition: var(--transition-theme);
+}
+
+.subtitleWrapper {
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 2.25rem;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  /* Cyberpunk style glowing text gradient */
+  background: linear-gradient(to right, #3b82f6, #a78bfa);
+  /* -webkit-background-clip: text; */
+  margin: 0;
+  background-clip: text;
+  color: transparent;
+}
+
+.description {
+  font-size: 1.25rem;
+  color: var(--color-text-muted); /* Soft slate-gray for clean typography readability */
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.8rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  transition: var(--transition-theme);
+}
+
+.highlight {
+  color: var(--color-accent);
+  font-weight: 600;
+  transition: var(--transition-theme);
+}
+
+/* --- Action Buttons Layout --- */
+.ctaContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  padding: 1.25rem 2rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.primaryBtn {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 14px var(--color-accent-glow);
+  transition: var(--transition-theme), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.primaryBtn:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--color-accent-glow);
+}
+
+.secondaryBtn {
+  background-color: var(--color-bg-card);
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border);
+  transition: var(--transition-theme), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.secondaryBtn:hover {
+  background-color: var(--color-bg-card-hover);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* --- Social Link Circles --- */
+.socialsContainer {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  margin-top: 1.25rem;
+}
+
+.socialCircle {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  transition: all 0.2s ease, var(--transition-theme);
+}
+
+.socialCircle:hover {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px var(--color-accent-glow);
+}
+
+/* --- Bottom Scroll Arrow --- */
+.scrollBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #475569;
+  transition: color 0.2s ease;
+}
+
+.scrollBtn:hover {
+  color: #3b82f6;
+}
+
+/* --- Responsive Scaling Breaks --- */
+@media (max-width: 768px) {
+  .name {
+    font-size: 3.5rem;
+  }
+  .subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .name {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,46 @@
+.scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--color-accent); /* Matching your theme branding blue */
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px var(--color-accent-glow);
+  z-index: 999; /* Ensures it sits above all grid cards and backgrounds */
+  
+  /* Smooth opacity & movement entry handling */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(15px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+/* Active trigger state handled cleanly by React state management */
+.scrollTopBtn.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scrollTopBtn:hover {
+  background-color: var(--color-accent-hover); /* Sophisticated deep blue hover shift */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px var(--color-accent-glow);
+}
+
+/* Ensure responsiveness on small smartphone viewports */
+@media (max-width: 480px) {
+  .scrollTopBtn {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,0 +1,202 @@
+.resumeSection {
+  width: 100%;
+  padding: 60px 0;
+  background-color: var(--color-resume-bg); /* Sits a step darker than the project section base */
+  transition: var(--transition-theme);
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Flex Row Header Layout containing your global section anchors */
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+/* Global Title Styles matching your projects structure */
+.titleContainer {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--color-text-title);
+  letter-spacing: -0.03em;
+  margin: 0;
+  transition: var(--transition-theme);
+}
+
+.titleLine {
+  width: 2.5rem;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #7c3aed);
+  border-radius: 99px;
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.titleContainer:hover .titleLine {
+  width: 100%;
+}
+
+/* Minimalist Dark Styled Download Action Pill Button */
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-accent);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease, var(--transition-theme);
+}
+
+.downloadBtn:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+}
+
+/* 2-Column Split Layout System */
+.resumeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Row wrapper for Column Header Text and Graphic Elements */
+.columnHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+/* Round structural icon bounds layout matching theme accents */
+.iconBox {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.columnTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-title);
+  margin: 0;
+  transition: var(--transition-theme);
+}
+
+/* Standard stacked sequence box */
+.cardsStack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Professional Dark Accent Card Panel matching your project frames */
+.resumeCard {
+  /* Elegant glassmorphism effect: slightly translucent to lift it off the background */
+  background: var(--color-resume-card-bg); 
+  
+  /* Semi-transparent border that lets the underlying dark theme show through smoothly */
+  border: 1px solid var(--color-resume-card-border); 
+  
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+  /* Silky smooth transitions for modern interactions */
+  transition: border-color 0.3s ease, 
+              background-color 0.3s ease, 
+              box-shadow 0.3s ease, 
+              transform 0.3s ease,
+              var(--transition-theme);
+}
+
+.resumeCard:hover {
+  /* Subtle physical lift off the page */
+  transform: translateY(-4px);
+  
+  /* Crisp blue glowing border match */
+  border-color: var(--color-accent);
+  
+  /* Slightly illuminates the glass card surface on cursor over */
+  background-color: var(--color-resume-card-bg-hover); 
+  
+  /* Soft indigo-blue ambient shadow behind the card */
+  box-shadow: 0 10px 25px var(--color-shadow-card-hover), 
+              0 4px 12px var(--color-accent-glow);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-title);
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+  transition: var(--transition-theme);
+}
+
+/* Dark Accent Timeline Pill Badge */
+.dateBadge {
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: var(--color-accent);
+  background-color: var(--color-accent-glow);
+  margin-bottom: 14px;
+  transition: var(--transition-theme);
+}
+
+.institution {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+  margin: 0 0 8px 0;
+  transition: var(--transition-theme);
+}
+
+.details {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0;
+  transition: var(--transition-theme);
+}
+
+@media (max-width: 426px) {
+  .resumeGrid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
