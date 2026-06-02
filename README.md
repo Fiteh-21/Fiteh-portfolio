@@ -15,7 +15,7 @@ A clean, modern portfolio website designed to showcase professional experience, 
 - Smooth animations and modern UI design
 - Organized sections for skills, projects, resume, and contact
 
-[Live Demo](https://example.com) • [Screenshot Preview](https://example.com/screenshot)
+[Live Demo](https://fiteh.netlify.com) 
 
 ---
 
@@ -29,10 +29,8 @@ A clean, modern portfolio website designed to showcase professional experience, 
 - [Usage](#usage)
 - [Customization](#customization)
 - [Deployment](#deployment)
-- [Future Improvements](#future-improvements)
 - [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+
 
 ---
 
@@ -119,8 +117,8 @@ portfolio/
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/portfolio.git
-cd portfolio
+git clone https://github.com/Fiteh-21/Fiteh-portfolio.git
+cd Fiteh-portfolio
 npm install
 ```
 
@@ -189,7 +187,7 @@ For visual changes, update the CSS module files for each component.
    ```
 3. Set the publish directory to:
    ```text
-dist
+   dist
    ```
 
 ### Vercel
@@ -202,19 +200,8 @@ dist
    ```
 4. Set the output directory to:
    ```text
-dist
+   dist
    ```
-
----
-
-## Future Improvements
-
-- Add project filtering and category tags
-- Add a blog or case study section
-- Add animated skill progress bars
-- Improve site accessibility and keyboard navigation
-- Add contact form backend integration
-- Add testimonials or client endorsements
 
 ---
 
@@ -230,16 +217,3 @@ Contributions are welcome. Please follow these steps:
 
 ---
 
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
----
-
-## Contact
-
-| Name | Email | LinkedIn | GitHub |
-| --- | --- | --- | --- |
-| Your Name | your.email@example.com | [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile) | [github.com/your-username](https://github.com/your-username) |
-
-> Update the placeholders above with your actual contact information before publishing.
