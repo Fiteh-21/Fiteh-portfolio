@@ -1,5 +1,12 @@
 .projectsSection {
+  position: relative;
   width: 100%;
+  max-width: 100%; /* Keeps everything contained inside the device width */
+  overflow: visible; /* Prevents text or cards from being clipped blindly */
+
+  /* Force clean mobile graphics processing layers */
+  will-change: transform;
+  transform: translateZ(0);
   padding: 60px 0;
 }
 
@@ -43,8 +50,8 @@
 /* 3-Column Uniform Grid Layout */
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 2rem;
   padding: 20px 0;
 }
 
@@ -185,11 +192,11 @@
 }
 
 /* mobile responsiveness */
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
   .projectsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
+} */
 
 /* @media (max-width: 768px) {
   .projectsGrid {
@@ -197,8 +204,18 @@
   }
 } */
 
+@media (max-width: 768px) {
+  .projectCard {
+    /* Force simple, flat, lightweight rendering on phone GPUs */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 @media (max-width: 576px) {
   .projectsGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1.25rem;
   }
 }
