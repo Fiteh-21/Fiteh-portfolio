@@ -269,17 +269,21 @@ export default function Skills() {
   return (
     <section id="skills" className={styles.skillsSection}>
       <div className={styles.container}>
-        {/* Underline interactive title layout */}
         <div className={styles.titleContainer}>
           <h2 className={styles.title}>Skills & Technologies</h2>
           <div className={styles.titleLine}></div>
         </div>
 
-        {/* Clean, Uniform Grid Layout matching image_fe0dc9.png */}
         <div className={styles.skillsGrid}>
           {skillData.map((skill) => (
-            <div key={skill.id} className={styles.skillCard}>
-              <div className={styles.iconBox}>{skill.svg}</div>
+            /* Explicit component wrapper with hardware isolation */
+            <div key={`skill-node-${skill.id}`} className={styles.skillCard}>
+              <div className={styles.iconBox}>
+                {/* Force the SVG to render layout-flat */}
+                <div style={{ width: "40px", height: "40px", display: "flex" }}>
+                  {skill.svg}
+                </div>
+              </div>
               <h3 className={styles.skillName}>{skill.name}</h3>
             </div>
           ))}

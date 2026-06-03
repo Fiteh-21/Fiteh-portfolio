@@ -10,18 +10,18 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
-    <>
+    <main style={{ width: "100%", overflowX: "hidden" }}>
       <Navbar />
-      
-        <Hero />
-        <About />
-        <Skills />
-        <Projects/>
-        <Resume />
-      
+
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Resume />
+
       <Contact />
       <ScrollToTop />
-    </>
+    </main>
   );
 }
 
