@@ -41,11 +41,7 @@ export default function Resume() {
             <div className={styles.titleLine}></div>
           </div>
 
-          <a
-            href="/Fiteh Tesfaye - Resume-2.pdf"
-            download
-            className={styles.downloadBtn}
-          >
+          <a href="/Fiteh-Resume.pdf" download className={styles.downloadBtn}>
             <svg
               viewBox="0 0 24 24"
               width="18"
