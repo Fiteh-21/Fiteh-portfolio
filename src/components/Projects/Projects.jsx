@@ -1,35 +1,46 @@
 import styles from "./Projects.module.css";
+import forum from "../../assets/images/forum.png";
 import intern from "../../assets/images/intern.jpg";
 import emailImage from "../../assets/images/email-generator.jpg";
 import churchImage from "../../assets/images/church-site.jpg";
 import netflixImage from "../../assets/images/netflix.jpg";
 import gpt from "../../assets/images/gpt.jpg";
-import chatbotImage from "../../assets/images/chatbot-app.jpg";
+
 
 export default function Projects() {
   const projectData = [
     {
       id: 1,
-      title: "Digital Internship Platform",
+      title: "AI Integrated Evangadi Forum",
       description:
-        "A comprehensive internship platform connecting students with employers, facilitating internship discovery, application tracking, and interview scheduling.",
-      image: intern,
-      github: "https://github.com/Fiteh-21/Digital-Internship-Portal.git",
-      live: "http://digital-internship.rf.gd/",
-      tags: ["HTML", "CSS", "JS", "MySQL", "PHP"],
+        "A forum platform that integrates AI capabilities, allowing users to engage in discussions, ask questions, and receive AI-generated responses for enhanced interaction.",
+      image: forum,
+      github: "https://github.com/Fiteh-21/AI-Powered-Forum.git",
+      live: "https://ai-powered-evangadi-forum.netlify.app/",
+      tags: ["React", "Node.js", "Express", "MySQL", "LLM API"],
     },
     {
       id: 2,
-      title: "AI Email Generator",
+      title: "ChatGPT Clone Project",
       description:
-        "Leverages LLMs to automate professional email drafting based on specific user prompts and context.",
-      image: emailImage,
-      github: "https://github.com/Fiteh-21/resume-email-generator",
-      live: "https://github.com/Fiteh-21/resume-email-generator",
-      tags: ["React", "Laravel", "Python"],
+        "A modern chat interface that allows users to interact with an AI model in real-time.",
+      image: gpt,
+      github: "https://github.com/Fiteh-21/GPT-CLONE.git",
+      live: "https://chatclone21.netlify.app/",
+      tags: ["React", "LLM API", "Node.js", "Express", "MySQL"],
     },
     {
       id: 3,
+      title: "Netflix Clone Project",
+      description:
+        "A Netflix clone project that replicates the core features and user interface of the popular streaming platform, allowing users to browse and watch movies and TV shows.",
+      image: netflixImage,
+      github: "https://github.com/Fiteh-21/moviedb.git",
+      live: "https://moviedbcloneproject.netlify.app/",
+      tags: [ "HTML", "CSS", "JS", "React", "TMDB API",],
+    },
+    {
+      id: 4,
       title: "Addis Alem Mariam Church",
       description:
         "A professional community website built for digital outreach, featuring a responsive and modern design.",
@@ -40,36 +51,24 @@ export default function Projects() {
       tags: ["React", "JS", "Bootstrap"],
     },
     {
-      id: 4,
-      title: "Netflix Clone Project",
-      description:
-        "A Netflix clone project that replicates the core features and user interface of the popular streaming platform, allowing users to browse and watch movies and TV shows.",
-      image: netflixImage,
-      github: "https://github.com/Fiteh-21/moviedb.git",
-      live: "https://moviedbcloneproject.netlify.app/",
-      tags: ["React", "TMDB API"],
-    },
-
-    {
       id: 5,
-      title: "ChatGPT Clone Project",
+      title: "Digital Internship Platform",
       description:
-        "A modern chat interface that allows users to interact with an AI model in real-time.",
-      image: gpt,
-      github: "https://github.com/Fiteh-21/GPT-CLONE.git",
-      live: "https://chatclone21.netlify.app/",
-      tags: ["React", "LLM API", "Node.js", "Express", "MySQL"],
+        "A comprehensive internship platform connecting students with employers, facilitating internship discovery, application tracking, and interview scheduling.",
+      image: intern,
+      github: "https://github.com/Fiteh-21/Digital-Internship-Portal.git",
+      live: "http://digital-internship.rf.gd/",
+      tags: ["HTML", "CSS", "JS", "MySQL", "PHP"],
     },
-
     {
       id: 6,
-      title: "Chatbot App",
+      title: "AI Email Generator",
       description:
-        "A modern chat interface that allows users to interact with an AI model in real-time.",
-      image: chatbotImage,
-      github: "https://github.com/Fiteh-21/ChatBot-App",
-      live: "https://github.com/Fiteh-21/ChatBot-App",
-      tags: ["Java", "LLM API"],
+        "Leverages LLMs to automate professional email drafting based on specific user prompts and context.",
+      image: emailImage,
+      github: "https://github.com/Fiteh-21/resume-email-generator",
+      live: "https://github.com/Fiteh-21/resume-email-generator",
+      tags: ["React", "Laravel", "Python"],
     },
   ];
 
