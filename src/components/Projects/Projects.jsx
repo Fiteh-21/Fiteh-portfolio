@@ -37,7 +37,7 @@ export default function Projects() {
       image: netflixImage,
       github: "https://github.com/Fiteh-21/moviedb.git",
       live: "https://moviedbcloneproject.netlify.app/",
-      tags: [ "HTML", "CSS", "JS", "React", "TMDB API",],
+      tags: ["HTML", "CSS", "JS", "React", "TMDB API"],
     },
     {
       id: 4,
@@ -56,7 +56,7 @@ export default function Projects() {
       description:
         "A comprehensive internship platform connecting students with employers, facilitating internship discovery, application tracking, and interview scheduling.",
       image: intern,
-      github: "https://github.com/Fiteh-21/Digital-Internship-Portal.git",
+      github: "https://github.com/Fiteh-21/Digital-Internship-Platform.git",
       live: "http://digital-internship.rf.gd/",
       tags: ["HTML", "CSS", "JS", "MySQL", "PHP"],
     },
